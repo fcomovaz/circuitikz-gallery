@@ -1,0 +1,17 @@
+\begin{circuitikz}
+    % choose the model american european
+    [american voltages, american resistors]
+    % start of circuit (Vin in this case)
+    \draw (0,0) coordinate(vin) to[battery2=$V_{in}$] (0,-3) coordinate(gnd)
+
+    % resistor array
+     (vin) -- ++(2,0) to[R=$R_1$] +(0,-3)
+    +(0,0) -- ++(2,0) to[R=$R_2$] +(0,-3)
+    +(0,0) -- ++(2,0) to[R=$R_3$] +(0,-3)
+    +(0,0) -- ++(2,0) to[R=$R_4$] +(0,-3)
+    +(0,0) -- ++(2,0) to[R=$R_5$] +(0,-3)
+
+    % gnd connection
+    -- (gnd)
+    ;    
+\end{circuitikz}

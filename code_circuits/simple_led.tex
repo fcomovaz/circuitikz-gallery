@@ -1,0 +1,18 @@
+\begin{circuitikz}
+    % choose the model american european
+    [american voltages, american resistors]
+    % this line can be changed foa an open voltage
+    % or for a voltage source, or anything you want
+    \draw (0,0) to[battery2=$V_{in}$] (0,-3)
+
+    % create the resistor
+    (0,0) -- ++(1,0) to[R=$R$] ++(2,0) -- ++(1,0)
+
+    % create led
+    to[full led=$LED$] ++(0,-3)
+
+    % to the ground
+    -- (0,-3)
+
+    ;    
+\end{circuitikz}

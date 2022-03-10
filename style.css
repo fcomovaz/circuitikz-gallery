@@ -78,23 +78,6 @@ body {
 }
 
 
-svg {
-    position: absolute;
-    transform: scale(0.2);
-    top: -10%;
-    left: 5%;
-    opacity: 0;
-    fill: #fafafa;
-    stroke: green;
-    stroke-width: 20px;
-    transition: opacity 500ms ease-in;
-}
-
-.gallery-item:hover > svg {
-    
-    opacity: 1;
-}
-
 /*
 
 The following rule will only run if your browser supports CSS grid.

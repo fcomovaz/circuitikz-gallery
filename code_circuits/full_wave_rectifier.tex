@@ -1,0 +1,44 @@
+\begin{circuitikz}[circuitikz/straight=true,
+    american,
+    full diodes,
+    circuitikz/bipoles/cuteswitch/thickness=0.3,
+    circuitikz/diodes/scale=0.5,
+    circuitikz/resistors/scale=0.7,
+    circuitikz/capacitors/scale=0.7,
+    circuitikz/diodes/scale=0.5,
+    circuitikz/capacitors/thickness=4,]
+    \node [transformer](T){};
+    \path (T.A1) node[ocirc]{} (T.A2) node[ocirc]{};
+    \draw (T.B1) to [short] ++(2,0) coordinate(top bridge);
+    \draw (T.A1) to [open, v=$V_{in}$] (T.A2);
+    % bridge
+    % find the center of the bridge; cross the top bridge with
+    % the center of the trafo
+    \coordinate (center bridge) at (T.center -| top bridge);
+    % now the coordinates to the right, bottom and left bridge
+    % this uses the calc library of tikz
+    \coordinate (right bridge) at ($(center bridge)!1!-90:(top bridge)$);
+    \coordinate (left bridge) at ($(center bridge)!1!90:(top bridge)$);
+    \coordinate (bottom bridge) at ($(center bridge)!1!-180:(top bridge)$);
+    % draw the bridge
+    \draw (top bridge) to [D, *-*] (right bridge)
+    to [D, *-*, invert] (bottom bridge)
+    to [D, *-*, invert] (left bridge)
+    to [D, *-*] (top bridge);
+    % the rest of the circuit
+    \node [jump crossing](X) at (left bridge |- T.B2) {};
+    \draw (T.B2) -- (X.west) (X.east) -- (bottom bridge);
+    % notice that if you change the "-2" here then the rest of the circuit
+    % will adapt, thank to using cross-coordinates and relative movements!
+    % The same will happens to the numbers in the ++(...) coordinates.
+        % ok, the rest of the circuit now
+    \draw (right bridge) to[R=$R_s$,a=$10\Omega$, -] ++(4,0) coordinate(rs);
+    \draw (rs) to[curved capacitor=$100\mu F$,a=$C$] ++(0,-2) coordinate(c2l);
+    \draw (left bridge) -- (X.north) (X.south) |- (c2l);
+    \draw (rs) to[short] ++(2.5,0) coordinate(r);
+    \draw (r) to[R,a=$R$,l=$10k\Omega$] ++(0,-2) coordinate(_r);
+    \draw (_r) to [short] ++(-3,0);
+    \draw (r) to[short] ++(2,0) coordinate(vou1);
+    \draw (_r) to[short] ++(2,0) coordinate(vou2);
+    \draw (vou1) to[open,o-o] (vou2);
+\end{circuitikz}
