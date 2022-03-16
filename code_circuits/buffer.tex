@@ -1,0 +1,16 @@
+\begin{circuitikz}[american]
+    % drawing the opamp
+    \draw node[op amp, noinv input up, anchor=-](OA1){}
+    
+    % inversor feedback
+    (OA1.-) -- ++(-1,0) -- ++(0,-1) -- ++(3,0) -| (OA1.out) -- (OA1.out)
+    to [short,*-*] ++(0,0)
+    
+    % input voltage
+    (OA1.+) -- ++(-1,0) to [short,-o] ++(-1,0) node[left]{$V_{in}$}
+    
+    % output voltage
+    (OA1.out) -- ++(2,0) to [short,a=$V_{out}$,o-] ++(0,0)
+
+    ;
+\end{circuitikz}

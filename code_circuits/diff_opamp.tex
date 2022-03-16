@@ -1,0 +1,20 @@
+\begin{circuitikz}[american]
+    % drawing the opamp
+    \draw node[op amp, noinv input down, anchor=+](OA){}
+
+    % input resistors
+    (OA.-) -- ++(0,0) to [R,a=$R_1$,*-o] ++(-3,0) node[left]{$V_{1}$}
+    (OA.+) -- ++(0,0) to [R={$R_3=R_1$},*-o] ++(-3,0) node[left]{$V_{2}$}
+
+    % resistor to ground
+    (OA.+) --(0,-1) to [R={$R_4=R_2$}] ++(0,-2) node[ground]{}
+
+    % feedback resistor
+    (OA.-) -- ++(0,1.5) -- ++(0,0)  to[R=$R_2$] ++(3,0) -| ++(0,-2) coordinate(a) -- (OA.out)
+
+    % output voltage
+    to[short,-*] (a)
+    (OA.out) -- ++(2,0) to [short,a=$V_{out}$,*-o] ++(0,0)
+
+    ;
+\end{circuitikz}
