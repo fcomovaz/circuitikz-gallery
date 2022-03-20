@@ -117,8 +117,8 @@ body {
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-    min-width: 500px;
-    width: 30%;
+    width: 500px;
+    /*width: 30%;*/
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
