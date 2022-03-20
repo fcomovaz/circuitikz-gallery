@@ -117,13 +117,13 @@ body {
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
+    min-width: 300px;
     width: 30%;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
     margin-bottom: 5em;
 }
-
 
 
 /*

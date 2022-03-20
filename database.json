@@ -1,0 +1,38 @@
+[
+    {
+       "circuitCode":"code_circuits/parallel_resistors.tex",
+       "circuitImg":"img_circuits/parallel_resistors.png",
+       "circuitAlt":"Parallel Resistors",
+       "circuitTags":"parallel resistor "
+    },
+    {
+       "circuitCode":"code_circuits/simple_led.tex",
+       "circuitImg":"img_circuits/simple_led.png",
+       "circuitAlt":"Simple LED",
+       "circuitTags":"led diode simple "
+    },
+    {
+       "circuitCode":"code_circuits/full_wave_rectifier.tex",
+       "circuitImg":"img_circuits/full_wave_rectifier.png",
+       "circuitAlt":"Full Wave Rectifier",
+       "circuitTags":"rectifier bridge diode "
+    },
+    {
+       "circuitCode":"code_circuits/wheatstone_bridge.tex",
+       "circuitImg":"img_circuits/wheatstone_bridge.png",
+       "circuitAlt":"Wheatstone Bridge",
+       "circuitTags":"Wheatstone Bridge "
+    },
+    {
+       "circuitCode":"code_circuits/diff_opamp.tex",
+       "circuitImg":"img_circuits/diff_opamp.png",
+       "circuitAlt":"Diferential OPAMP",
+       "circuitTags":"Diferential operational amplifier "
+    },
+    {
+       "circuitCode":"code_circuits/buffer.tex",
+       "circuitImg":"img_circuits/buffer.png",
+       "circuitAlt":"Buffer OPAMP",
+       "circuitTags":"buffer operational amplifier "
+    }
+ ]
